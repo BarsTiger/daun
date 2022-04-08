@@ -1,0 +1,1 @@
+pyinstaller --onefile --console --noconfirm --icon logo.ico daun.py
