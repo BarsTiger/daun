@@ -20,6 +20,10 @@ parser.add_argument('--set-wallpaper', help='link (web image url or file path) t
 parser.add_argument('-d', '--download', help='download file from url to specified',
                     nargs=2, metavar=('https://sample.url/to/file.ext', 'P:/ath/To/Folder/With/file.ext'),
                     dest='download')
+parser.add_argument('--get-proc-path', help='get path to process by name or PID',
+                    metavar='daun.exe', dest='get_proc_path')
+parser.add_argument('--kill-proc', help='kill process by PID or name',
+                    metavar='daun.exe', dest='kill_proc')
 
 args = parser.parse_args()
 
@@ -60,3 +64,19 @@ if args.set_wallpaper:
 if args.download:
     from modules.download import download
     download(args.download[0], args.download[1])
+
+
+if args.get_proc_path:
+    from modules.process import get_location
+    try:
+        print(get_location(pid=int(args.get_proc_path)))
+    except ValueError:
+        print(get_location(process_name=args.get_proc_path))
+
+
+if args.kill_proc:
+    from modules.process import kill
+    try:
+        kill(pid=int(args.kill_proc))
+    except ValueError:
+        kill(process_name=args.kill_proc)
