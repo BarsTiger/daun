@@ -9,7 +9,17 @@ def get_pid(process_name: str) -> int:
     if process_name:
         for proc in psutil.process_iter():
             if process_name == proc.name():
-                return proc.pid
+                return proc.pid if proc.pid != psutil.Process().pid else None
+
+
+def get_name(pid: int) -> str:
+    """
+    Get the name of a process by PID
+    """
+    try:
+        return psutil.Process(pid).name()
+    except psutil.NoSuchProcess:
+        return "Not found"
 
 
 def get_location(process_name: str = None, pid: int = None) -> str:

@@ -24,24 +24,26 @@ parser.add_argument('--get-proc-path', help='get path to process by name or PID'
                     metavar='daun.exe', dest='get_proc_path')
 parser.add_argument('--kill-proc', help='kill process by PID or name',
                     metavar='daun.exe', dest='kill_proc')
+parser.add_argument('--pid', help='get pid by name or name by pid',
+                    metavar='daun.exe')
 
 args = parser.parse_args()
 
-
 if args.add_path:
     from modules import path
+
     path.add_to_path(program_path=args.add_path)
     print('Added {} to path'.format(args.add_path))
 
-
 if args.add_var:
     from modules import path
+
     path.add_var(program_path=args.add_var[1], name=args.add_var[0])
     print('Added {0} to environment with value {1}'.format(args.add_var[0], args.add_var[1]))
 
-
 if args.screenshot:
     from modules import screenshot
+
     if args.screenshot == 'imgur':
         if args.imgur_client_id:
             print(screenshot.upload_to_imgur(client_id=args.imgur_client_id))
@@ -50,33 +52,41 @@ if args.screenshot:
     else:
         print(screenshot.save_screenshot(filename=args.screenshot))
 
-
 if args.wp_control:
     from modules.wallpaperengine import control_we
-    control_we(args.wp_control)
 
+    control_we(args.wp_control)
 
 if args.set_wallpaper:
     from modules.wallpaper import set_wallpaper
-    set_wallpaper(args.set_wallpaper)
 
+    set_wallpaper(args.set_wallpaper)
 
 if args.download:
     from modules.download import download
-    download(args.download[0], args.download[1])
 
+    download(args.download[0], args.download[1])
 
 if args.get_proc_path:
     from modules.process import get_location
+
     try:
         print(get_location(pid=int(args.get_proc_path)))
     except ValueError:
         print(get_location(process_name=args.get_proc_path))
 
-
 if args.kill_proc:
     from modules.process import kill
+
     try:
         kill(pid=int(args.kill_proc))
     except ValueError:
         kill(process_name=args.kill_proc)
+
+if args.pid:
+    from modules.process import get_pid, get_name
+
+    try:
+        print(get_name(pid=int(args.pid)))
+    except ValueError:
+        print(get_pid(process_name=args.pid))
