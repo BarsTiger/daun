@@ -56,14 +56,27 @@ class Ui_MainWindow(object):
         self.build_button.setFlat(False)
         self.build_button.setObjectName("build_button")
         self.modules_list = QtWidgets.QListWidget(self.centralwidget)
-        self.modules_list.setGeometry(QtCore.QRect(10, 70, 270, 350))
-        self.modules_list.setStyleSheet("border-width: 1px;\n"
-"border-radius:15px;\n"
-"border-style: solid;\n"
-"border-color: #303030;\n"
-"padding: 10px;\n"
-"background-color: #242424;\n"
-"font: 10pt \"Segoe UI\";")
+        self.modules_list.setGeometry(QtCore.QRect(10, 70, 270, 310))
+        self.modules_list.setStyleSheet("QListWidget {\n"
+"    border-width: 1px;\n"
+"    border-radius:15px;\n"
+"    border-style: solid;\n"
+"    border-color: #303030;\n"
+"    padding: 10px;\n"
+"    background-color: #242424;\n"
+"    font: 10pt \"Segoe UI\";\n"
+"}\n"
+"\n"
+"QScrollBar {\n"
+"  background: #959595;\n"
+"  width: 8px;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:vertical {\n"
+"  background: #303030;\n"
+"  min-height: 20px;\n"
+"}\n"
+"")
         self.modules_list.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.modules_list.setFrameShadow(QtWidgets.QFrame.Raised)
         self.modules_list.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustIgnored)
@@ -72,7 +85,7 @@ class Ui_MainWindow(object):
         self.modules_list.setUniformItemSizes(False)
         self.modules_list.setObjectName("modules_list")
         self.desc_list = QtWidgets.QTextBrowser(self.centralwidget)
-        self.desc_list.setGeometry(QtCore.QRect(285, 70, 270, 350))
+        self.desc_list.setGeometry(QtCore.QRect(285, 70, 270, 310))
         self.desc_list.setStyleSheet("border-width: 1px;\n"
 "border-radius:15px;\n"
 "border-style: solid;\n"
@@ -97,6 +110,107 @@ class Ui_MainWindow(object):
         self.daun_builder_logo.setFrameShadow(QtWidgets.QFrame.Raised)
         self.daun_builder_logo.setTextInteractionFlags(QtCore.Qt.NoTextInteraction)
         self.daun_builder_logo.setObjectName("daun_builder_logo")
+        self.choose_button = QtWidgets.QPushButton(self.centralwidget)
+        self.choose_button.setGeometry(QtCore.QRect(450, 390, 101, 25))
+        self.choose_button.setMouseTracking(False)
+        self.choose_button.setTabletTracking(False)
+        self.choose_button.setFocusPolicy(QtCore.Qt.TabFocus)
+        self.choose_button.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
+        self.choose_button.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"    border-width: 1px;\n"
+"    border-radius:6px;\n"
+"    border-style: solid;\n"
+"    border-color: #303030;\n"
+"    background-color: #2c2d2e;\n"
+"    font: 10pt \"Segoe UI\";\n"
+"}\n"
+"QPushButton:hover{\n"
+"    border-width: 2px;\n"
+"    background-color: #323232;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color: #262728;\n"
+"}\n"
+"QPushButton:disabled{\n"
+"    background-color: #434343;\n"
+"    border-color: #0000;\n"
+"}")
+        self.choose_button.setAutoDefault(False)
+        self.choose_button.setFlat(False)
+        self.choose_button.setObjectName("choose_button")
+        self.path_box = QtWidgets.QLineEdit(self.centralwidget)
+        self.path_box.setGeometry(QtCore.QRect(285, 390, 160, 25))
+        self.path_box.setStyleSheet("border-width: 1px;\n"
+"border-radius:5px;\n"
+"border-style: solid;\n"
+"border-color: #303030;\n"
+"background-color: #242424;\n"
+"font: 10pt \"Segoe UI\";")
+        self.path_box.setObjectName("path_box")
+        self.choose_button_2 = QtWidgets.QPushButton(self.centralwidget)
+        self.choose_button_2.setGeometry(QtCore.QRect(285, 430, 160, 25))
+        self.choose_button_2.setMouseTracking(False)
+        self.choose_button_2.setTabletTracking(False)
+        self.choose_button_2.setFocusPolicy(QtCore.Qt.TabFocus)
+        self.choose_button_2.setContextMenuPolicy(QtCore.Qt.NoContextMenu)
+        self.choose_button_2.setStyleSheet("QPushButton {\n"
+"    color: white;\n"
+"    border-width: 1px;\n"
+"    border-radius:6px;\n"
+"    border-style: solid;\n"
+"    border-color: #303030;\n"
+"    background-color: #2c2d2e;\n"
+"    font: 10pt \"Segoe UI\";\n"
+"}\n"
+"QPushButton:hover{\n"
+"    border-width: 2px;\n"
+"    background-color: #323232;\n"
+"}\n"
+"QPushButton:pressed{\n"
+"    background-color: #262728;\n"
+"}\n"
+"QPushButton:disabled{\n"
+"    background-color: #434343;\n"
+"    border-color: #0000;\n"
+"}")
+        self.choose_button_2.setAutoDefault(False)
+        self.choose_button_2.setFlat(False)
+        self.choose_button_2.setObjectName("choose_button_2")
+        self.is_pyinstaller = QtWidgets.QRadioButton(self.centralwidget)
+        self.is_pyinstaller.setGeometry(QtCore.QRect(20, 415, 80, 15))
+        self.is_pyinstaller.setStyleSheet("font: 10pt \"Segoe UI\";")
+        self.is_pyinstaller.setChecked(True)
+        self.is_pyinstaller.setObjectName("is_pyinstaller")
+        self.is_nuitka = QtWidgets.QRadioButton(self.centralwidget)
+        self.is_nuitka.setGeometry(QtCore.QRect(20, 435, 80, 15))
+        self.is_nuitka.setStyleSheet("font: 10pt \"Segoe UI\";")
+        self.is_nuitka.setObjectName("is_nuitka")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(20, 390, 90, 25))
+        self.label.setStyleSheet("font: 10pt \"Segoe UI\";")
+        self.label.setObjectName("label")
+        self.builder_bg = QtWidgets.QWidget(self.centralwidget)
+        self.builder_bg.setGeometry(QtCore.QRect(10, 389, 121, 71))
+        self.builder_bg.setStyleSheet("border-width: 1px;\n"
+"border-radius:15px;\n"
+"border-style: solid;\n"
+"border-color: #303030;\n"
+"padding: 10px;\n"
+"background-color: #242424;\n"
+"font: 10pt \"Segoe UI\";")
+        self.builder_bg.setObjectName("builder_bg")
+        self.builder_bg.raise_()
+        self.build_button.raise_()
+        self.modules_list.raise_()
+        self.desc_list.raise_()
+        self.daun_builder_logo.raise_()
+        self.choose_button.raise_()
+        self.path_box.raise_()
+        self.choose_button_2.raise_()
+        self.is_pyinstaller.raise_()
+        self.is_nuitka.raise_()
+        self.label.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -116,6 +230,11 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'Segoe UI\'; font-size:20pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">daun builder</p></body></html>"))
+        self.choose_button.setText(_translate("MainWindow", "Choose folder"))
+        self.choose_button_2.setText(_translate("MainWindow", "Choose custom icon"))
+        self.is_pyinstaller.setText(_translate("MainWindow", "pyinstaller"))
+        self.is_nuitka.setText(_translate("MainWindow", "nuitka"))
+        self.label.setText(_translate("MainWindow", "Choose builder"))
 import images_rc
 
 
