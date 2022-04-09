@@ -1,25 +1,32 @@
+# --- Before ///
 import argparse
 
 parser = argparse.ArgumentParser(prog='daun',
                                  description='Dumb Additional Util Nativeier - if you see this but didn\'t download '
                                              'it, you may have a virus or your friend is motherhacker :)')
+# - Path ///
 parser.add_argument('--add-path', help='folder to add to path',
                     metavar='P:/ath/To/Folder', dest='add_path')
 parser.add_argument('--add-var', help='add variable to environment and its value',
                     nargs=2, dest='add_var', metavar=('VAR', 'value'))
+# - Screenshot ///
 parser.add_argument('--screenshot', help='make a screenshot of all screens, and save it to specified file or to imgur'
                                          ' if no file specified and client id is specified',
                     metavar='P:/ath/To/Folder/With/screenshot.jpg', const='imgur', nargs='?')
 parser.add_argument('--imgur', help='imgur app client id',
                     metavar='69zxc420228wtf', dest='imgur_client_id')
+# - Wallpaper Engine Control ///
 parser.add_argument('--wp-control', help='control command for wallpaper engine',
                     choices=['pause', 'stop', 'play', 'mute', 'unmute'],
                     dest='wp_control')
+# - Wallpaper ///
 parser.add_argument('--set-wallpaper', help='link (web image url or file path) to wallpaper to be set',
                     metavar='P:/ath/To/wallpaper.jpg', dest='set_wallpaper')
+# - Download ///
 parser.add_argument('-d', '--download', help='download file from url to specified',
                     nargs=2, metavar=('https://sample.url/to/file.ext', 'P:/ath/To/Folder/With/file.ext'),
                     dest='download')
+# - Process ///
 parser.add_argument('--get-proc-path', help='get path to process by name or PID',
                     metavar='daun.exe', dest='get_proc_path')
 parser.add_argument('--kill-proc', help='kill process by PID or name',
@@ -27,8 +34,13 @@ parser.add_argument('--kill-proc', help='kill process by PID or name',
 parser.add_argument('--pid', help='get pid by name or name by pid',
                     metavar='daun.exe')
 
+# --- Parse args ///
 args = parser.parse_args()
 
+# -- Path ///
+"""
+Actions with PATH and environment variables
+"""
 if args.add_path:
     from modules import path
 
@@ -41,6 +53,10 @@ if args.add_var:
     path.add_var(program_path=args.add_var[1], name=args.add_var[0])
     print('Added {0} to environment with value {1}'.format(args.add_var[0], args.add_var[1]))
 
+# -- Screenshot ///
+"""
+Make a screenshot of all screens and save it to specified file or to imgur
+"""
 if args.screenshot:
     from modules import screenshot
 
@@ -52,21 +68,37 @@ if args.screenshot:
     else:
         print(screenshot.save_screenshot(filename=args.screenshot))
 
+# -- Wallpaper Engine Control ///
+"""
+Control wallpaper engine
+"""
 if args.wp_control:
     from modules.wallpaperengine import control_we
 
     control_we(args.wp_control)
 
+# -- Wallpaper ///
+"""
+Set wallpapers
+"""
 if args.set_wallpaper:
     from modules.wallpaper import set_wallpaper
 
     set_wallpaper(args.set_wallpaper)
 
+# -- Download ///
+"""
+Download file from url to specified
+"""
 if args.download:
     from modules.download import download
 
     download(args.download[0], args.download[1])
 
+# - Process ///
+"""
+Action with windows processes
+"""
 if args.get_proc_path:
     from modules.process import get_location
 

@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>566</width>
+    <height>466</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>566</width>
+    <height>466</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>566</width>
+    <height>466</height>
+   </size>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::TabFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>daun builder</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="images.qrc">
+    <normaloff>:/img/logo.ico</normaloff>:/img/logo.ico</iconset>
+  </property>
+  <property name="windowOpacity">
+   <double>0.990000000000000</double>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #202020;
+color: #ffffff;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="build_button">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>430</y>
+      <width>101</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::TabFocus</enum>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::NoContextMenu</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: white;
+	border-width: 1px;
+	border-radius:6px;
+	border-style: solid;
+	border-color: #303030;
+	background-color: #2c2d2e;
+	font: 10pt &quot;Segoe UI&quot;;
+}
+QPushButton:hover{
+	border-width: 2px;
+	background-color: #323232;
+}
+QPushButton:pressed{
+	background-color: #262728;
+}
+QPushButton:disabled{
+	background-color: #434343;
+	border-color: #0000;
+}</string>
+    </property>
+    <property name="text">
+     <string>Build it</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QListWidget" name="modules_list">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>270</width>
+      <height>310</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QListWidget {
+	border-width: 1px;
+	border-radius:15px;
+	border-style: solid;
+	border-color: #303030;
+	padding: 10px;
+	background-color: #242424;
+	font: 10pt &quot;Segoe UI&quot;;
+}
+
+QScrollBar {
+  background: #959595;
+  width: 8px;
+}
+
+QScrollBar::handle:vertical {
+  background: #303030;
+  min-height: 20px;
+}
+</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <property name="sizeAdjustPolicy">
+     <enum>QAbstractScrollArea::AdjustIgnored</enum>
+    </property>
+    <property name="dragEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="movement">
+     <enum>QListView::Static</enum>
+    </property>
+    <property name="uniformItemSizes">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="desc_list">
+    <property name="geometry">
+     <rect>
+      <x>285</x>
+      <y>70</y>
+      <width>270</width>
+      <height>310</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-width: 1px;
+border-radius:15px;
+border-style: solid;
+border-color: #303030;
+padding: 10px;
+background-color: #242424;
+font: 10pt &quot;Segoe UI&quot;;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="acceptRichText">
+     <bool>true</bool>
+    </property>
+    <property name="textInteractionFlags">
+     <set>Qt::NoTextInteraction</set>
+    </property>
+   </widget>
+   <widget class="QTextBrowser" name="daun_builder_logo">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>545</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-width: 1px;
+border-radius:15px;
+border-style: solid;
+border-color: #303030;
+background-color: #242424;
+font: 20pt &quot;Segoe UI&quot;;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:20pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;daun builder&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="textInteractionFlags">
+     <set>Qt::NoTextInteraction</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="choose_button">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>390</y>
+      <width>101</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::TabFocus</enum>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::NoContextMenu</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: white;
+	border-width: 1px;
+	border-radius:6px;
+	border-style: solid;
+	border-color: #303030;
+	background-color: #2c2d2e;
+	font: 10pt &quot;Segoe UI&quot;;
+}
+QPushButton:hover{
+	border-width: 2px;
+	background-color: #323232;
+}
+QPushButton:pressed{
+	background-color: #262728;
+}
+QPushButton:disabled{
+	background-color: #434343;
+	border-color: #0000;
+}</string>
+    </property>
+    <property name="text">
+     <string>Choose</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="path_box">
+    <property name="geometry">
+     <rect>
+      <x>285</x>
+      <y>390</y>
+      <width>160</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-width: 1px;
+border-radius:5px;
+border-style: solid;
+border-color: #303030;
+background-color: #242424;
+font: 10pt &quot;Segoe UI&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="choose_button_2">
+    <property name="geometry">
+     <rect>
+      <x>285</x>
+      <y>430</y>
+      <width>160</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="tabletTracking">
+     <bool>false</bool>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::TabFocus</enum>
+    </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::NoContextMenu</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+	color: white;
+	border-width: 1px;
+	border-radius:6px;
+	border-style: solid;
+	border-color: #303030;
+	background-color: #2c2d2e;
+	font: 10pt &quot;Segoe UI&quot;;
+}
+QPushButton:hover{
+	border-width: 2px;
+	background-color: #323232;
+}
+QPushButton:pressed{
+	background-color: #262728;
+}
+QPushButton:disabled{
+	background-color: #434343;
+	border-color: #0000;
+}</string>
+    </property>
+    <property name="text">
+     <string>Choose custom icon</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="is_pyinstaller">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>415</y>
+      <width>80</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;Segoe UI&quot;;</string>
+    </property>
+    <property name="text">
+     <string>pyinstaller</string>
+    </property>
+    <property name="checked">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="is_nuitka">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>435</y>
+      <width>80</width>
+      <height>15</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;Segoe UI&quot;;</string>
+    </property>
+    <property name="text">
+     <string>nuitka</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>390</y>
+      <width>90</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;Segoe UI&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Choose builder</string>
+    </property>
+   </widget>
+   <widget class="QWidget" name="builder_bg" native="true">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>389</y>
+      <width>121</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-width: 1px;
+border-radius:15px;
+border-style: solid;
+border-color: #303030;
+padding: 10px;
+background-color: #242424;
+font: 10pt &quot;Segoe UI&quot;;</string>
+    </property>
+   </widget>
+   <zorder>builder_bg</zorder>
+   <zorder>build_button</zorder>
+   <zorder>modules_list</zorder>
+   <zorder>desc_list</zorder>
+   <zorder>daun_builder_logo</zorder>
+   <zorder>choose_button</zorder>
+   <zorder>path_box</zorder>
+   <zorder>choose_button_2</zorder>
+   <zorder>is_pyinstaller</zorder>
+   <zorder>is_nuitka</zorder>
+   <zorder>label</zorder>
+  </widget>
+ </widget>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
+ <connections/>
+</ui>
