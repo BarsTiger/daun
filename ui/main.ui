@@ -33,7 +33,7 @@
     <normaloff>:/img/logo.ico</normaloff>:/img/logo.ico</iconset>
   </property>
   <property name="windowOpacity">
-   <double>0.990000000000000</double>
+   <double>0.970000000000000</double>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: #202020;
@@ -349,7 +349,8 @@ QPushButton:disabled{
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 10pt &quot;Segoe UI&quot;;</string>
+     <string notr="true">font: 10pt &quot;Segoe UI&quot;;
+background: none;</string>
     </property>
     <property name="text">
      <string>pyinstaller</string>
@@ -368,7 +369,8 @@ QPushButton:disabled{
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 10pt &quot;Segoe UI&quot;;</string>
+     <string notr="true">font: 10pt &quot;Segoe UI&quot;;
+background: none;</string>
     </property>
     <property name="text">
      <string>nuitka</string>
@@ -384,7 +386,8 @@ QPushButton:disabled{
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 10pt &quot;Segoe UI&quot;;</string>
+     <string notr="true">font: 10pt &quot;Segoe UI&quot;;
+background: none;</string>
     </property>
     <property name="text">
      <string>Choose builder</string>
@@ -438,7 +441,8 @@ font: 10pt &quot;Segoe UI&quot;;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 10pt &quot;Segoe UI&quot;;</string>
+     <string notr="true">font: 10pt &quot;Segoe UI&quot;;
+background: none;</string>
     </property>
     <property name="text">
      <string>Invisible window</string>
