@@ -3,3 +3,5 @@ pyimgur
 psutil
 requests
 pyinstaller
+zstandard
+nuitka

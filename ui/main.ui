@@ -168,7 +168,7 @@ font: 10pt &quot;Segoe UI&quot;;</string>
      <enum>QFrame::Raised</enum>
     </property>
     <property name="html">
-     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+     <string notr="true">&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:10pt; font-weight:400; font-style:normal;&quot;&gt;
@@ -215,7 +215,7 @@ p, li { white-space: pre-wrap; }
      <set>Qt::NoTextInteraction</set>
     </property>
    </widget>
-   <widget class="QPushButton" name="choose_button">
+   <widget class="QPushButton" name="choose_folder_button">
     <property name="geometry">
      <rect>
       <x>450</x>
@@ -286,7 +286,7 @@ background-color: #242424;
 font: 10pt &quot;Segoe UI&quot;;</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="choose_button_2">
+   <widget class="QPushButton" name="choose_icon_button">
     <property name="geometry">
      <rect>
       <x>285</x>
@@ -409,17 +409,54 @@ background-color: #242424;
 font: 10pt &quot;Segoe UI&quot;;</string>
     </property>
    </widget>
+   <widget class="QWidget" name="options_bg" native="true">
+    <property name="geometry">
+     <rect>
+      <x>140</x>
+      <y>390</y>
+      <width>141</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-width: 1px;
+border-radius:15px;
+border-style: solid;
+border-color: #303030;
+padding: 10px;
+background-color: #242424;
+font: 10pt &quot;Segoe UI&quot;;</string>
+    </property>
+   </widget>
+   <widget class="QCheckBox" name="enable_console_button">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>400</y>
+      <width>121</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;Segoe UI&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Invisible window</string>
+    </property>
+   </widget>
    <zorder>builder_bg</zorder>
    <zorder>build_button</zorder>
    <zorder>modules_list</zorder>
    <zorder>desc_list</zorder>
    <zorder>daun_builder_logo</zorder>
-   <zorder>choose_button</zorder>
+   <zorder>choose_folder_button</zorder>
    <zorder>path_box</zorder>
-   <zorder>choose_button_2</zorder>
+   <zorder>choose_icon_button</zorder>
    <zorder>is_pyinstaller</zorder>
    <zorder>is_nuitka</zorder>
    <zorder>label</zorder>
+   <zorder>options_bg</zorder>
+   <zorder>enable_console_button</zorder>
   </widget>
  </widget>
  <resources>
