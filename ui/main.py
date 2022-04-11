@@ -256,7 +256,7 @@ class Ui_MainWindow(object):
         self.is_nuitka.setText(_translate("MainWindow", "nuitka"))
         self.label.setText(_translate("MainWindow", "Choose builder"))
         self.enable_console_button.setText(_translate("MainWindow", "Invisible window"))
-import images_rc
+import ui.images_rc
 
 
 if __name__ == "__main__":

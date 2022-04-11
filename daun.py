@@ -4,6 +4,7 @@ import argparse
 parser = argparse.ArgumentParser(prog='daun',
                                  description='Dumb Additional Util Nativeier - if you see this but didn\'t download '
                                              'it, you may have a virus or your friend is motherhacker :)')
+# - Base ///
 # - Path ///
 parser.add_argument('--add-path', help='folder to add to path',
                     metavar='P:/ath/To/Folder', dest='add_path')
@@ -37,9 +38,18 @@ parser.add_argument('--pid', help='get pid by name or name by pid',
 # --- Parse args ///
 args = parser.parse_args()
 
+# -- Base ///
+"""
+Base daun library, this module does not contain any code and will be added anyway
+
+7.61 Mb
+"""
+
 # -- Path ///
 """
 Actions with PATH and environment variables
+
+1 Kb
 """
 if args.add_path:
     from modules import path
@@ -56,6 +66,8 @@ if args.add_var:
 # -- Screenshot ///
 """
 Make a screenshot of all screens and save it to specified file or to imgur
+
+2.9 Mb
 """
 if args.screenshot:
     from modules import screenshot
@@ -71,6 +83,8 @@ if args.screenshot:
 # -- Wallpaper Engine Control ///
 """
 Control wallpaper engine
+
+0.3 Mb
 """
 if args.wp_control:
     from modules.wallpaperengine import control_we
@@ -80,6 +94,8 @@ if args.wp_control:
 # -- Wallpaper ///
 """
 Set wallpapers
+
+2.8 Mb
 """
 if args.set_wallpaper:
     from modules.wallpaper import set_wallpaper
@@ -89,15 +105,19 @@ if args.set_wallpaper:
 # -- Download ///
 """
 Download file from url to specified
+
+2.8 Mb
 """
 if args.download:
     from modules.download import download
 
     download(args.download[0], args.download[1])
 
-# - Process ///
+# -- Process ///
 """
 Action with windows processes
+
+0.29 Mb
 """
 if args.get_proc_path:
     from modules.process import get_location
