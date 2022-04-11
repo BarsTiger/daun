@@ -76,7 +76,7 @@ def build(*args):
                   f'--onefile --windows-icon-from-ico={icon_path} '
                   f'{"" if not ui.enable_console_button.isChecked() else "--windows-disable-console"} daun-to-build.py')
         try:
-            shutil.move(f'{os.getcwd()}/daun-to-build.dist/daun-to-build.exe', ui.path_box.text())
+            shutil.move(f'{os.getcwd()}/daun-to-build.exe', ui.path_box.text())
             os.remove(f'daun-to-build.py')
         except FileNotFoundError:
             pass
