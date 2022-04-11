@@ -92,6 +92,7 @@ show_desc = lambda: ui.desc_list.setText(functions[ui.modules_list.currentItem()
 ui.modules_list.setCurrentItem(ui.modules_list.item(0))
 ui.modules_list.itemClicked.connect(show_desc)
 ui.modules_list.currentItemChanged.connect(show_desc)
+show_desc()
 ui.modules_list.itemDoubleClicked.connect(lambda:
                                           ui.modules_list.currentItem().setCheckState(
                                               QtCore.Qt.Unchecked if ui.modules_list.currentItem().checkState()
