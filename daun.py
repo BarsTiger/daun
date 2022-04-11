@@ -23,6 +23,10 @@ parser.add_argument('--wp-control', help='control command for wallpaper engine',
 # - Wallpaper ///
 parser.add_argument('--set-wallpaper', help='link (web image url or file path) to wallpaper to be set',
                     metavar='P:/ath/To/wallpaper.jpg', dest='set_wallpaper')
+# - Wallpaper Screenshot ///
+parser.add_argument('--wallpaper-screenshot', help='make a screenshot and set it to wallpaper (prank),'
+                                                   'specify time in seconds to wait before screenshot',
+                    type=float, metavar='0.1')
 # - Download ///
 parser.add_argument('-d', '--download', help='download file from url to specified',
                     nargs=2, metavar=('https://sample.url/to/file.ext', 'P:/ath/To/Folder/With/file.ext'),
@@ -41,6 +45,8 @@ args = parser.parse_args()
 # -- Base ///
 """
 Base daun library, this module does not contain any code and will be added anyway
+Sizes of modules are specified if you add only one module, but if you add more modules, some of them may be 
+double-used, so size of build will be much smaller
 
 7.61 Mb
 """
@@ -101,6 +107,19 @@ if args.set_wallpaper:
     from modules.wallpaper import set_wallpaper
 
     set_wallpaper(args.set_wallpaper)
+
+# -- Wallpaper Screenshot ///
+"""
+Make a screenshot and set it to wallpaper (prank)
+
+2.9 Mb
+"""
+if args.wallpaper_screenshot:
+    import time
+    from modules.wallpaper import set_wallpaper
+    from modules.screenshot import save_screenshot
+    time.sleep(args.wallpaper_screenshot)
+    set_wallpaper(save_screenshot())
 
 # -- Download ///
 """
