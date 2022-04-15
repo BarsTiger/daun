@@ -6,3 +6,5 @@ requests
 pyinstaller
 zstandard
 nuitka
+python-vlc
+playsound

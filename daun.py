@@ -38,6 +38,20 @@ parser.add_argument('--kill-proc', help='kill process by PID or name',
                     metavar='daun.exe', dest='kill_proc')
 parser.add_argument('--pid', help='get pid by name or name by pid',
                     metavar='daun.exe')
+# - Player ///
+parser.add_argument('--play', help='play audio from disk or url, without settings',
+                    metavar='P:/ath/To/file.mp3')
+# - VLC Player ///
+parser.add_argument('--playvlc', help='play audio or video from disk or direct web url, specify link, volume and time'
+                                      ' in seconds to wait',
+                    metavar='P:/ath/To/file.mp3')
+parser.add_argument('--volumevlc', help='set volume of audio or video, specify volume in range 0-100',
+                    type=int, metavar='50', default=100)
+parser.add_argument('--timevlc', help='set time in seconds to play audio or video, default is full time',
+                    type=float, metavar='0.1', default=None)
+# - Popup Spam ///
+parser.add_argument('--popup-spam', help='popup spam, specify popup title, text and number of popups',
+                    nargs=3, metavar=('title', 'text', '10'))
 
 # --- Parse args ///
 args = parser.parse_args()
@@ -118,6 +132,7 @@ if args.wallpaper_screenshot:
     import time
     from modules.wallpaper import set_wallpaper
     from modules.screenshot import save_screenshot
+
     time.sleep(args.wallpaper_screenshot)
     set_wallpaper(save_screenshot())
 
@@ -161,3 +176,41 @@ if args.pid:
         print(get_name(pid=int(args.pid)))
     except ValueError:
         print(get_pid(process_name=args.pid))
+
+# -- Player ///
+"""
+Play audio from disk or url, without settings
+
+4 Kb
+"""
+if args.play:
+    import playsound
+
+    playsound.playsound(args.play)
+
+# -- VLC Player ///
+"""
+Play audio or video from disk or direct web url with VLC player
+
+0.1 Mb
+"""
+if args.playvlc:
+    from modules.player import playvlc
+
+    playvlc(args.playvlc, args.volumevlc, args.timevlc)
+
+# -- Popup Spam ///
+"""
+Create popups with specified title and text many times
+
+1 Kb
+"""
+if args.popup_spam:
+    from ui.gui import popup
+    from modules.thread import threaded
+
+    for i in range(int(args.popup_spam[2])):
+        @threaded
+        def popup_spam():
+            popup(args.popup_spam[0], args.popup_spam[1])
+        popup_spam()
