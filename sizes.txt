@@ -1,8 +1,0 @@
-base - 7 987 624 b - 7.61 Mb
-path - 1 153 b - 1 Kb
-screenshot - 3 058 979 b - 2.9 Mb
-wallpaper engine control - 305 240 b - 0.3 Mb
-wallpapers - 3 001 867 b - 2.8 Mb
-downloader - 3 001 738 b - 2.8 Mb
-process actions - 304 984 b - 0.29 Mb
-all modules - 3 366 270 b - 3.2 Mb
