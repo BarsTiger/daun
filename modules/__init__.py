@@ -1,5 +1,5 @@
 import sys
-sys.path.append('daun/modules')
+sys.path.append('modules')
 from .download import *
 from .path import *
 from .player import *
