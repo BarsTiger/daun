@@ -1,5 +1,5 @@
 # Module to enable and disable wallpaper engine
-from modules.process import get_location
+from process import get_location
 import os
 
 

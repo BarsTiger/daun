@@ -1,5 +1,7 @@
 # --- Before ///
 import argparse
+import sys
+sys.path.append('modules')
 
 parser = argparse.ArgumentParser(prog='daun',
                                  description='Dumb Additional Util Nativeier - if you see this but didn\'t download '
