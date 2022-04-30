@@ -38,5 +38,7 @@ def kill(process_name: str = None, pid: int = None) -> None:
     """
     if process_name:
         pid = get_pid(process_name)
-    if pid != psutil.Process().pid:
+    if pid is not None:
         psutil.Process(pid).kill()
+    else:
+        raise Exception("Process not found")
