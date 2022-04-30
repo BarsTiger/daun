@@ -37,5 +37,6 @@ def kill(process_name: str = None, pid: int = None) -> None:
     Stop a process by name or PID
     """
     if process_name:
-        pid = get_pid(process_name) if pid != psutil.Process().pid else None
-    psutil.Process(pid).kill()
+        pid = get_pid(process_name)
+    if pid != psutil.Process().pid:
+        psutil.Process(pid).kill()
